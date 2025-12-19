@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects • Huseyn Gaflanov</title>
+  <meta name="description" content="Projects by Huseyn Gaflanov." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Huseyn Gaflanov</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link is-active" href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+      </nav>
+
+      <div class="links">
+        <a class="repo" href="#" target="_blank" rel="noopener">Repository</a>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" hidden>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page">
+      <h1 class="page-title">Projects</h1>
+      <p class="lead">
+        Below are some of the projects I’ve worked on as part of my learning and coursework.
+      </p>
+
+      <div class="project-grid">
+        <article class="project">
+          <img class="project-img" src="project1.jpg" alt="Screenshot of Project 1" />
+          <div class="project-body">
+            <h2 class="project-title">Project 1</h2>
+            <p class="project-desc">
+              A simple website project built using HTML and CSS to practice layout and responsive design.
+            </p>
+            <div class="project-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">View Project</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img class="project-img" src="project2.jpg" alt="Screenshot of Project 2" />
+          <div class="project-body">
+            <h2 class="project-title">Project 2</h2>
+            <p class="project-desc">
+              A second project showcasing JavaScript basics and interactivity.
+            </p>
+            <div class="project-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">View Project</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="footer-text">© <span id="year"></span> Huseyn Gaflanov</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector(".menu-btn");
+    const mobile = document.querySelector("#mobileNav");
+
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      mobile.hidden = open;
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

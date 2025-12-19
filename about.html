@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About • Huseyn Gaflanov</title>
+  <meta name="description" content="About Huseyn Gaflanov." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Huseyn Gaflanov</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link is-active" href="about.html" aria-current="page">About</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+      </nav>
+
+      <div class="links">
+        <a class="repo" href="#" target="_blank" rel="noopener">Repository</a>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" hidden>
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page">
+      <h1 class="page-title">About Me</h1>
+      <p class="lead">
+        I’m Huseyn Gaflanov — a student interested in technology, web development, and building clean, simple projects.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h2>Background</h2>
+          <p>
+            I am currently studying and developing my skills in web technologies such as HTML, CSS, and JavaScript.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Skills</h2>
+          <ul class="list">
+            <li>HTML & CSS</li>
+            <li>JavaScript (basic)</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Interests</h2>
+          <ul class="list">
+            <li>Basketball</li>
+            <li>UI / UX design</li>
+            <li>Building personal projects</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="footer-text">© <span id="year"></span> Huseyn Gaflanov</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector(".menu-btn");
+    const mobile = document.querySelector("#mobileNav");
+
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      mobile.hidden = open;
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
